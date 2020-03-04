@@ -50,9 +50,16 @@ namespace Test.Controllers
         [Route("page")]
         public async Task<IActionResult> Page(Guid id, bool draft = false)
         {
-            var model = await _loader.GetPageAsync<StandardPage>(id, HttpContext.User, draft);
+            try
+            {
+                var model = await _loader.GetPageAsync<StandardPage>(id, HttpContext.User, draft);
 
-            return View(model);
+                return View(model);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return new RedirectResult("/login");
+            }
         }
 
         /// <summary>

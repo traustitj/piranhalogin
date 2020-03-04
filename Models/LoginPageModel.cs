@@ -24,9 +24,5 @@ namespace Test.Models
 
             return Page();
         }
-
-        public void OnGet() {
-            int a = 1 + 2;
-        }
     }
 }
