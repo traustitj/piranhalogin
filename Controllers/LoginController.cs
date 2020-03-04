@@ -29,7 +29,8 @@ namespace Test.Controllers
         //     var model = await _loader.GetPageAsync<StandardPage>(id, HttpContext.User, draft);
 
         //     return View(model);
-            return Ok();
+
+            return View();
         }
     }
 }
