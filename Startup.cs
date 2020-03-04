@@ -80,7 +80,7 @@ namespace Test
                 {
                     await next();
 
-                    if (ctx.Response.StatusCode == 404)
+                    if (ctx.Response.StatusCode == 401)
                     {
                         ctx.Response.Redirect("/login");
             
